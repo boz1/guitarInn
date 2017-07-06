@@ -134,7 +134,8 @@
                 echo '</br>';
                 echo '<strong>Number of Strings: </strong>' . $value->NumberOfStrings;
                 echo '</br>';
-                echo '<strong>Number of Frets:</strong>' . $value->NumberOfFrets;
+                echo '<strong>Number of Frets: </strong>' . $value->NumberOfFrets;
+                echo '</br>';
                 ?>
             </p>
         </div>

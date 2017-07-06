@@ -11,6 +11,8 @@
 
         <title>Simple Sidebar - Start Bootstrap Template</title>
 
+        <link rel="shortcut icon" href="{{asset('img/favicon.png') }}">
+        
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
