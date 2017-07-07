@@ -121,7 +121,7 @@
                                     ?>
                                 </p>
                                 <a href="details&<?php echo $value->id; ?>">
-                                    <img src="../img/storage/upload/<?php echo $value->Image; ?>" alt="just another guitar" style="width:100%; height: 100%;border:0;">
+                                    <img src="../img/<?php echo $value->Image; ?>" alt="just another guitar" style="width:100%; height: 100%;border:0;">
                                 </a>
 
                                 </br>
