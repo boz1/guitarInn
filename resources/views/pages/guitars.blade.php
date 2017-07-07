@@ -15,7 +15,7 @@
                     ?>
                 </p>      
                 <a href="details&<?php echo $value->id; ?>">
-                    <img src="storage/upload/<?php echo $value->Image; ?>" alt="just another guitar" style="width:534px; height: 180px;border:0;">
+                    <img src="../img/<?php echo $value->Image; ?>" alt="just another guitar" style="width:534px; height: 180px;border:0;">
                 </a>
                 </br>
                 </br>          
