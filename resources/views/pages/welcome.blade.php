@@ -169,7 +169,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="team-member">
-                            <img src="../img/team/Burak.JPG" class="img-responsive img-circle" alt="">
+                            <img src="../img/team/Burak.jpg" class="img-responsive img-circle" alt="">
                             <h4>Burak Öz</h4>
                             <p class="text-muted">the man</p>
                             <ul class="list-inline social-buttons">
