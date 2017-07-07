@@ -21,6 +21,8 @@
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+        <link rel="shortcut icon" href="{{asset('img/favicon.png') }}">
+        
         <!-- Theme CSS -->
         <link href="css/agency.min.css" rel="stylesheet">
 
@@ -30,7 +32,6 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
         <![endif]-->
-        <link rel="shortcut icon" href="{{asset('img/favicon.png') }}">
 
     </head>
 
@@ -44,26 +45,26 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="index.php">guitarInn</a>
+                    <a class="navbar-brand page-scroll" href="#page-top">guitarInn</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hidden">
-                            <a href="#index.php"></a>
+                            <a href="#page-top"></a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#page-top">Home</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#about">guitarInn</a>
+                            <a class="page-scroll" href="#about">About</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#team">Team</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="guitars">Guitars</a>
+                            <a class="page-scroll" href="products">Guitars</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="login">Login</a>
@@ -81,18 +82,13 @@
                 <div class="intro-text">
                     <div class="intro-lead-in">Welcome To guitarInn!</div>
                     <div class="intro-heading">Largest guitar database on the net!</div>
-                    <form  action="search" method="get" autocomplete="off">
-                        <div id="custom-search-input">
-                            <div class="input-group col-md-12">           
-                                <input type="text" class="  search-query form-control" name="search" placeholder="Search" style="font-family:Montserrat">
-                                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="submit" style="background-color:#fed136; border-color:#fed136">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>         
-                            </div>
+                    <form class="form-inline global-search" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="">Enter search terms</label>
+                            <input type="search" class="form-control" id="k" name="k" placeholder="search for guitars...">
+                            <input id="cn" name="cn" type="hidden" value="false" />
                         </div>
+                        <button type="submit" id="s" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
                     </form>
                 </div>
             </div>
@@ -100,57 +96,50 @@
 
 
         <!-- About Section -->
-        <section id="about" style="padding:20px">
+        <section id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center" style="text-align: center;margin: 20px;">
-                        <img src="../guitarinn.png" alt="GuitarInn" style="width:250px;height:219px;border:0;padding-bottom: 10px">
-                        <h4 class="subheading">GuitarInn has as its primary task to provide detailed and accurate information about guitars.</h4>
-                        <h4 class="subheading">You can search, vote, favourite and even compare guitars!</h4>
-                    </div>
-                    <div class="col-lg-12 text-center" >
-                        <?php
-                        foreach ($Guitars as $value) {
-                            ?>
-                            <div class="col-lg-4" style="  padding :5px; ">
-                                <p>
-                                    <?php
-                                    echo '<strong>' . $value->Title . '</strong>';
-                                    echo '</br>';
-                                    echo '</br>';
-                                    ?>
-                                </p>
-                                <a href="details&<?php echo $value->id; ?>">
-                                    <img src="storage/upload/<?php echo $value->Image; ?>" alt="just another guitar" style="width:100%; height: 100%;border:0;">
-                                </a>
-
-                                </br>
-                                </br>
-                                <p>
-                                    <?php
-                                    echo '<strong>Brand: </strong>' . $value->Brand_Name;
-                                    echo '</br>';
-                                    echo '<strong>Color: </strong>' . $value->Color_Type;
-                                    echo '</br>';
-                                    echo '<strong>Year: </strong>' . $value->Year;
-                                    echo '</br>';
-                                    echo '<strong>Neck Pickup: </strong>' . $value->NeckPick;
-                                    echo '</br>';
-                                    echo '<strong>Mid Pickup: </strong>' . $value->MidPick;
-                                    echo '</br>';
-                                    echo '<strong>Body Wood: </strong>' . $value->BodyWood;
-                                    ?>
-                                </p>
-                            </div>
-                            <?php
-                        }
-                        ?>
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">About</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <a href="guitars" class="page-scroll btn btn-xl" style="width: auto;margin:50px;">Browse More Guitars</a>
-                    </div>
+                <div class="col-md-12"  style="text-align : center; padding-top:20px">
+                    <?php
+                    foreach ($Guitars as $value) {
+                        ?>
+                        <div class="col-md-12" style=" padding :30px; border: 1px solid #000; text-align:center;">
+                            <p>
+                                <?php
+                                echo '<strong>' . $value->Title . '</strong>';
+                                echo '</br>';
+                                echo '</br>';
+                                ?>
+                            </p>
+                            <a href="about">
+                                <img src="storage/upload/<?php echo $value->Image; ?>" alt="just another guitar" style="height:200px;border:0;">
+                            </a>
+
+                            </br>
+                            </br>
+                            <p>
+                                <?php
+                                echo '<strong>Brand: </strong>' . $value->Brand_Name;
+                                echo '</br>';
+                                echo '<strong>Color: </strong>' . $value->Color_Type;
+                                echo '</br>';
+                                echo '<strong>Year: </strong>' . $value->Year;
+                                echo '</br>';
+                                echo '<strong>Neck Pickup: </strong>' . $value->NeckPick;
+                                echo '</br>';
+                                echo '<strong>Mid Pickup: </strong>' . $value->MidPick;
+                                echo '</br>';
+                                echo '<strong>Body Wood: </strong>' . $value->BodyWood;
+                                ?>
+                            </p>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
 
             </div>
@@ -169,13 +158,15 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="team-member">
-                            <img src="../img/team/Burak.jpg" class="img-responsive img-circle" alt="">
+                            <img src="../img/team/Burak.JPG" class="img-responsive img-circle" alt="">
                             <h4>Burak Öz</h4>
                             <p class="text-muted">the man</p>
                             <ul class="list-inline social-buttons">
+                                <li><a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li><a href="https://www.linkedin.com/in/burakoz1/"><i class="fa fa-linkedin"></i></a>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -190,7 +181,7 @@
                                 </li>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li><a href="https://www.linkedin.com/in/kerem-tun%C3%A7er-54645892/"><i class="fa fa-linkedin"></i></a>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
                         </div>
