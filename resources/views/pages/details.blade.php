@@ -99,7 +99,7 @@
                 ?>
             </p>
             </br>
-            <img id="myImg" src="storage/upload/<?php echo $value->Image; ?>" alt="just another guitar" style="width:534px; height: 180px;border:0;">
+            <img id="myImg" src="../img/<?php echo $value->Image; ?>" alt="just another guitar" style="width:534px; height: 180px;border:0;">
             </br>
             <p>
                 <?php
